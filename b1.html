@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medica Fast Response</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script>
+        const data = {
+            "Karnataka": {
+                "Belagavi": ["Belagavi", "Bailhongal", "Gokak"],
+                "Udupi": ["Brahmavara", "Kundapura", "Udupi"],
+                "Bengaluru": ["Bommasandra", "Kengeri", "Krishnarajapura"]
+            },
+            "Maharashtra": {
+                "Pune": ["Vadgaon", "Indapur", "Baramati"],
+                "Mumbai": ["Kurla", "Andheri", "Borivali"],
+                "Washim": ["Malegaon", "Washim", "Karanja"]
+            },
+            "Andhra Pradesh": {
+                "Anantapur": ["Rayadurgam", "Gooty", "Taditatri"],
+                "Chittor": ["Chittor", "Palamaner", "Kuppam"],
+                "Kurnool": ["Pathikonda", "Tuggali", "Krishna Giri"]
+            }
+        };
+
+        function populateDistricts() {
+            const stateSelect = document.getElementById("state");
+            const districtSelect = document.getElementById("district");
+            const citySelect = document.getElementById("city");
+            const selectedState = stateSelect.value;
+
+            // Clear existing options
+            districtSelect.innerHTML = "<option value=''>Select a district</option>";
+            citySelect.innerHTML = "<option value=''>Select a city</option>";
+
+            // Add new options
+            if (selectedState) {
+                const districts = Object.keys(data[selectedState]);
+                districts.forEach(district => {
+                    const option = document.createElement("option");
+                    option.value = district;
+                    option.text = district;
+                    districtSelect.add(option);
+                });
+            }
+        }
+
+        function populateCities() {
+            const stateSelect = document.getElementById("state");
+            const districtSelect = document.getElementById("district");
+            const citySelect = document.getElementById("city");
+            const selectedState = stateSelect.value;
+            const selectedDistrict = districtSelect.value;
+
+            // Clear existing options
+            citySelect.innerHTML = "<option value=''>Select a city</option>";
+
+            // Add new options
+            if (selectedState && selectedDistrict) {
+                const cities = data[selectedState][selectedDistrict];
+                cities.forEach(city => {
+                    const option = document.createElement("option");
+                    option.value = city;
+                    option.text = city;
+                    citySelect.add(option);
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <img src="https://thumbs.dreamstime.com/z/hospital-logo-template-hospital-logo-template-117487677.jpg" alt="Medica Fast Response Logo" class="logo">
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        
+        <!-- Blood Donor Search Section -->
+        <section class="blood-donor-search">
+            <div class="hero-image">
+                <img src="https://www.sriramakrishnahospital.com/wp-content/uploads/2021/06/Blood-Donation-1.jpg" alt="Blood Bank">
+            </div>
+            <div class="container">
+                <h2>Find Blood Bank</h2>
+                <form action="#" method="get">
+                    <label for="blood-group">Blood Group</label>
+                    <select id="blood-group" name="blood-group" required>
+                        <option value="">--Select--</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                    <label for="state">Select State</label>
+                    <select id="state" name="state" onchange="populateDistricts()" required>
+                        <option value="">--Select--</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Kerala">Kerala</option>
+                        <!-- Add state options here -->
+                    </select>
+
+                    <label for="district">Select District</label>
+                    <select id="district" name="district" onchange="populateCities()" required>
+                        <option value="">--Select--</option>
+                        <!-- Add district options here -->
+                    </select>
+
+                    <label for="city">Select City</label>
+                    <select id="city" name="city" required>
+                        <option value="">--Select--</option>
+                        <!-- Add city options here -->
+                    </select>
+
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Medica Fast Response. All rights reserved.</p>
+            <p>Contact us: +91 7760822596 | info@medicafastresponse.com</p>
+        </div>
+    </footer>
+</body>
+</html>

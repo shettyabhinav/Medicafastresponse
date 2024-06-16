@@ -1,0 +1,246 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+.search-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 350px;
+  }
+  
+  #search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 30px grey;
+    background-color: rgba(246, 246, 246, 1.0);
+    
+  }
+  
+  #suggestions {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: white;
+    border-radius: 0 0 4px 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+  }
+  
+  .suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .suggestion-item:hover {
+    background-color: #f0f0f0;
+  }
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #3279a1;
+    background-color: #BFD7EA;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #124f72;
+}
+
+#logom {
+    display: flex;
+    align-items: center;
+}
+
+#logom img {
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 100%;
+}
+
+/* Header Styles */
+header {
+    background: #0d4768;
+    color: white;
+    padding: 10px 0;
+}
+
+header .logo {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav ul li {
+    margin: 0 10px;
+    position: relative;
+}
+
+header nav ul li a {
+    color: #BFD7EA;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: .5s ease-in-out;
+}
+header nav ul li a:hover{
+    color: rgb(255, 136, 0);
+}
+header nav ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #04f7df;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+header nav ul li:hover::after{
+    width: 100%;
+}
+
+/* Main Section Styles */
+.hero {
+    background: #4197a0;
+    color: white;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.hero .cta-button {
+    background: #FF5A5F;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px black;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background: #0B3954;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hero {
+        flex-direction: row;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+    }
+}
+/* Bed Reservation Section Styles */
+.bed-reservation {
+    background: #2f79a3;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.bed-reservation h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.bed-reservation form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bed-reservation input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 10px 0 0 10px;
+
+}
+
+.bed-reservation button {
+    padding: 10px 20px;
+    background: #FF5A5F;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    box-shadow: 10px 0px 10px black;
+}
+.vertical-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0.5rem;
+    max-width: 500px;
+}

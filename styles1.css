@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #0B3954;
+    background-color: #bdbaa0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+/* Header Styles */
+header {
+    background: #c25151;
+    color: rgb(208, 190, 190);
+    padding: 10px 0;
+}
+
+header .logo {
+    height: 50px;
+    border-radius: 100%;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav ul li {
+    margin: 0 10px;
+    position: relative;
+}
+
+header nav ul li a {
+    color: #baccdc;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: .5s ease-in-out;
+}
+header nav ul li a:hover{
+    color: orange;
+}
+header nav ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #d0b796;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+header nav ul li:hover::after{
+    width: 100%;
+}
+.hero-image img {
+    width: 80%;
+    height: 20%;
+    border-radius: 20px;
+}
+/* Main Section Styles */
+.blood-donor-search {
+    background: #e8e4da;
+    color: rgb(255, 0, 0);
+    padding: 50px 0;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.blood-donor-search h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.blood-donor-search form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blood-donor-search label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.blood-donor-search select {
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 10px #2d2626;
+}
+
+.blood-donor-search button {
+    padding: 10px 20px;
+    background: #0da831;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    background: #d01919;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blood-donor-search form {
+        width: 100%;
+    }
+
+    .blood-donor-search select {
+        width: 90%;
+    }
+}
